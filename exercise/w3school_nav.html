@@ -6,19 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
-        ul {
-            background-color: grey;
+        .nav {
+            width: 1210px;
+            height: 48px;
+            background-color: #E8E7E3;
+
+            margin: 100px auto;
         }
 
-        ul>li {
+        .nav li {
             float: left;
-            padding: 10px;
-            background-color: bisque;
+            /* background-color: red; */
+            /* height: 48px; */
+            line-height: 48px;
+            /* padding: 10px; */
+            /* background-color: bisque; */
         }
 
-        ul>li>a:hover {
-            background-color: black;
+        .nav a {
+            padding: 0px 39px ;
+            display: block;
+            text-decoration: none;
+            color: #777777;
+            font-size: 18px;
+        }
+
+        .nav li:last-child a {
+            padding: 0px 42px 0px 58px;
+        }
+
+        .nav a:hover {
+            background-color:#3F3F3F;
+            color: #E8E7E3;
         }
     </style>
 </head>
