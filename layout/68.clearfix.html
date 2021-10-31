@@ -10,20 +10,56 @@
             width: 200px;
             height: 200px;
             background-color: #bfa;
+            /* overflow: hidden; */
         }
+
+        /* .box1::before {
+            content: "";
+            display: table;
+        } */
 
         .box2 {
             width: 100px;
             height: 100px;
             background-color: orange;
-            margin-top: 50px;
+            margin-top: 100px;
             border: 1px red solid;
+        }
+
+        /* 终极解决方案：高度塌陷、外边距重叠 */
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .box3 {
+            border: 10px blue solid;
+            margin-top: 20px;
+        }
+
+        /* .box3::after {
+            content: '';
+            display: table;
+            clear: both;
+        } */
+
+        .box4 {
+            background-color: rebeccapurple;
+            width: 100px;
+            height: 100px;
+            float: left;
         }
     </style>
 </head>
 <body>
-    <div class="box1">
+    <div class="box1 clearfix">
         <div class="box2"></div>
+    </div>
+
+    <div class="box3 clearfix">
+        <div class="box4"></div>
     </div>
 </body>
 </html>
