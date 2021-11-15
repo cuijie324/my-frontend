@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东轮播图</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+            object-fit: contain;
+            position: absolute;
+            z-index: 1;
+        }
+
+        ul {
+            position: absolute;
+            /* top: 80%;
+            left: 20%; */
+        }
+
+        /* li {
+            float: left;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="./image/1.webp">
+        <img src="./image/2.jpeg">
+        <img src="./image/3.jpeg">
+        <img src="./image/4.jpeg">
+        <img src="./image/5.jpeg">
+        <img src="./image/6.webp">
+        <img src="./image/7.jpeg">
+        <img src="./image/8.jpeg">
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+
+    <script>
+        let lis = document.getElementsByTagName('li');
+        let imgs = document.getElementsByTagName('img');
+
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                imgs[i].style.zIndex = 200;
+                for (let j = 0; j < imgs.length; j++) {
+                    if (j !== i) {
+                        imgs[j].style.zIndex = 20;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
